@@ -1,0 +1,8 @@
+<resource-bundle 
+		xmlns="http://www.spicefactory.org/parsley/flash/resource-bundle"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.spicefactory.org/parsley/flash/resource-bundle
+			http://www.spicefactory.org/parsley/schema/2.0/parsley-resources-flash-bundle.xsd"
+		>
+    <resource key="a">Text A</resource>
+</resource-bundle>
