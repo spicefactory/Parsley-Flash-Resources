@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<componentPackage>
+	<component id="FlashResourceXmlSupport" class="org.spicefactory.parsley.flash.resources.tag.FlashResourceXmlSupport"/>
+</componentPackage>
