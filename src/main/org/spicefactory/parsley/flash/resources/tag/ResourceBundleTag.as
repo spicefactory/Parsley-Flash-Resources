@@ -15,13 +15,14 @@
  */
 
 package org.spicefactory.parsley.flash.resources.tag {
+
+import org.spicefactory.parsley.core.registry.ObjectDefinitionRegistry;
 import org.spicefactory.lib.errors.IllegalArgumentError;
 import org.spicefactory.lib.task.SequentialTaskGroup;
 import org.spicefactory.lib.task.TaskGroup;
 import org.spicefactory.lib.task.events.TaskEvent;
-import org.spicefactory.parsley.config.Configuration;
 import org.spicefactory.parsley.config.RootConfigurationElement;
-import org.spicefactory.parsley.dsl.ObjectDefinitionBuilder;
+import org.spicefactory.parsley.core.builder.ObjectDefinitionBuilder;
 import org.spicefactory.parsley.flash.resources.impl.DefaultBundleLoaderFactory;
 import org.spicefactory.parsley.flash.resources.impl.DefaultResourceBundle;
 import org.spicefactory.parsley.flash.resources.spi.BundleLoaderFactory;
@@ -127,9 +128,9 @@ public class ResourceBundleTag extends EventDispatcher implements RootConfigurat
 		dispatchEvent(event.clone());
 	}
 	
-	public function process (config:Configuration) : void {
-		var builder:ObjectDefinitionBuilder = config.builders.forClass(ResourceBundleTag);
-		builder.lifecycle().instantiator(new TagInstantiator(this));
+	public function process (registry: ObjectDefinitionRegistry) : void {
+		var builder:ObjectDefinitionBuilder = registry.builders.forClass(ResourceBundleTag);
+		builder.instantiate(new TagInstantiator(this));
 		builder.asSingleton().id(id).order(int.MIN_VALUE).register();
 	}
 	

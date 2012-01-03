@@ -1,12 +1,12 @@
 package org.spicefactory.parsley.flash.resources {
 
-import org.spicefactory.parsley.dsl.context.ContextBuilderSetup;
 import org.flexunit.assertThat;
 import org.flexunit.async.Async;
 import org.hamcrest.object.equalTo;
+import org.spicefactory.parsley.context.ContextBuilder;
+import org.spicefactory.parsley.context.ContextBuilderSetup;
 import org.spicefactory.parsley.core.context.Context;
 import org.spicefactory.parsley.core.events.ContextEvent;
-import org.spicefactory.parsley.dsl.context.ContextBuilder;
 import org.spicefactory.parsley.flash.resources.events.LocaleSwitchEvent;
 import org.spicefactory.parsley.flash.resources.model.AnnotatedResourceBinding;
 import org.spicefactory.parsley.flash.resources.model.SecondResourceBinding;

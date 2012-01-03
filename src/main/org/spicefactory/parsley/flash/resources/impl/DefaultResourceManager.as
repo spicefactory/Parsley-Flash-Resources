@@ -15,6 +15,7 @@
  */
  
 package org.spicefactory.parsley.flash.resources.impl {
+
 import org.spicefactory.lib.errors.IllegalArgumentError;
 import org.spicefactory.lib.errors.IllegalStateError;
 import org.spicefactory.lib.logging.LogContext;
@@ -28,7 +29,7 @@ import org.spicefactory.parsley.flash.resources.adapter.FlashResourceBindingAdap
 import org.spicefactory.parsley.flash.resources.events.LocaleSwitchEvent;
 import org.spicefactory.parsley.flash.resources.spi.ResourceBundleSpi;
 import org.spicefactory.parsley.flash.resources.spi.ResourceManagerSpi;
-import org.spicefactory.parsley.processor.resources.ResourceBindingProcessor;
+import org.spicefactory.parsley.resources.processor.ResourceBindingProcessor;
 
 import flash.events.ErrorEvent;
 import flash.events.EventDispatcher;
