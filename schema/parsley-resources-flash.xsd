@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    xmlns="http://www.spicefactory.org/parsley/resources/flash"
+    xmlns:tns="http://www.spicefactory.org/parsley/resources/flash"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.spicefactory.org/parsley/resources/flash">
+
+    <xs:element name="resource-manager">
+    	<xs:complexType>
+	        <xs:sequence>
+	            <xs:element name="locale" type="localeType" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence> 
+	        <xs:attribute name="type" type="xs:token" use="optional"/>
+	        <xs:attribute name="cacheable" type="xs:boolean" use="optional"/>
+	        <xs:attribute name="persistent" type="xs:boolean" use="optional"/>
+	    </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="localeType">
+        <xs:attribute name="language" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:pattern value="[a-z]{2}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="country" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:pattern value="[A-Z]{2}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>        
+    </xs:complexType>
+    
+    <xs:element name="resource-bundle">
+    	<xs:complexType>
+	        <xs:attribute name="id" type="xs:token" use="required"/>
+	        <xs:attribute name="basename" type="xs:token" use="required"/>
+	        <xs:attribute name="type" type="xs:token" use="optional"/>
+	        <xs:attribute name="loader-factory" type="xs:token" use="optional"/>
+	        <xs:attribute name="localized" type="xs:boolean" use="optional"/>  
+	        <xs:attribute name="ignore-country" type="xs:boolean" use="optional"/>        
+    	</xs:complexType>
+   	</xs:element>
+    
+</xs:schema>
